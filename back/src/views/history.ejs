@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <!-- Bản quyền thuộc về: https://thegioicode.vn -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>LAYNICK.COM - Trợ Năng Kéo Tâm Full Đỏ Free Fire</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="keywords" content="LAYNICK.COM - Trợ Năng Kéo Tâm Full Đỏ Free Fire " />
+        <meta name="description" content="LAYNICK.COM - Trợ Năng Kéo Tâm Full Đỏ Free Fire " />
+        <link href="/css/fullcalendar.bundle.css" rel="stylesheet" />
+        <link href="/css/datatables.bundle.css" rel="stylesheet" />
+        <link href="/css/plugins.bundle.css" rel="stylesheet" />
+        <link href="/css/style.bundle.css" rel="stylesheet" />
+        <link href="/css/style.custom.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <script rel="stylesheet" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body data-kt-app-header-stacked="true" data-kt-app-header-primary-enabled="true" class="app-default">
+        <!-- Bản quyền thuộc về: https://thegioicode.vn -->
+        <div class="d-flex flex-column flex-root app-root">
+            <div class="app-page flex-column flex-column-fluid">
+                <div class="app-header">
+                    <div class="app-header-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-grow-1 flex-lg-grow-0">
+                                <div class="d-flex align-items-center me-7">
+                                    <a href="/" class="d-flex align-items-center me-lg-20 me-5">
+                                        <a href="/"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="app-navbar flex-shrink-0">
+                                <a class="app-navbar-item ms-3 ms-lg-9" href="accounts">
+                                    <div class="d-flex align-items-center">
+                                        <a class="cursor-pointer symbol symbol symbol-circle symbol-35px symbol-md-40px" href="/menu">
+                                            <img class="" src="/images/logo-user.gif" alt="user" />
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-wrapper flex-column flex-row-fluid">
+                    <div class="app-container container-xxl d-flex flex-row flex-column-fluid">
+                        <div class="app-main flex-column flex-row-fluid">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="app-toolbar d-flex flex-stack py-4 pb-8">
+                                    <div class="d-flex flex-grow-1 flex-stack flex-wrap gap-2 mb-n10">
+                                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                                                Lịch sử hack nick
+                                            </h1>
+                                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                                <li class="breadcrumb-item text-muted">
+                                                    <a href="/" class="text-muted text-hover-primary">Trang Chủ</a>
+                                                </li>
+                                                <li class="breadcrumb-item">
+                                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                                </li>
+                                                <li class="breadcrumb-item text-muted">Tài Khoản</li>
+                                                <li class="breadcrumb-item">
+                                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                                </li>
+                                                <li class="breadcrumb-item text-dark">Lịch sử hack nick</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="app-content flex-column-fluid">
+                                    <div class="card">
+                                        <div class="card-header border-0 cursor-pointer">
+                                            <div class="card-title m-0">
+                                                <h3 class="fw-bold m-0">Danh sách nick đã hack</h3>
+                                            </div>
+                                        </div>
+                                        <div class="collapse show">
+                                            <div class="col-md-12 overflow-auto">
+                                                <table class="table align-middle border rounded text-center table-row-dashed fs-6 g-5 mb-0">
+                                                    <thead>
+                                                        <tr class="text-center text-gray-400 fw-bold fs-7 text-uppercase">
+                                                            <th class="min-w-100px">ID</th>
+                                                            <th class="min-w-100px">Tên</th>
+                                                            <th class="min-w-100px">Trạng Thái</th>
+                                                            <th class="min-w-100px">Thông tin</th>
+                                                            <th class="min-w-100px">Thời Gian</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="fw-semibold text-gray-600">
+                                                        <% if (accounts.length > 0) { %> <% accounts.forEach((account) => { %>
+                                                        <tr>
+                                                            <td><%= account.account_id %></td>
+                                                            <td><%= account.nickname %></td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge <%= account.status === 'pending' ? 'bg-warning' : account.status === 'success' ? 'bg-success' : 'bg-danger' %>"
+                                                                    ><%= account.status ==='pending' ? 'Đang chờ' : account.status ===
+                                                                    'success' ? 'Thành công' : 'Thất bại' %></span
+                                                                >
+                                                            </td>
+                                                            <td>
+                                                                <% if (account.info) { %>
+                                                                <textarea
+                                                                    class="form-control"
+                                                                    placeholder="Định dạng Tài khoản|Mật khẩu"
+                                                                    rows="1"
+                                                                >
+<%= account.info %></textarea
+                                                                >
+                                                                <% } else { %>
+                                                                <button
+                                                                    type="button"
+                                                                    class="btn btn-sm btn-info watch-info"
+                                                                    data-account-id="<%= account.account_id %>"
+                                                                >
+                                                                    Xem
+                                                                </button>
+
+                                                                <% } %>
+                                                            </td>
+
+                                                            <td><%= account.created_at %></td>
+                                                        </tr>
+                                                        <% }); %> <% } else { %>
+                                                        <tr>
+                                                            <td colspan="5">Không có dữ liệu</td>
+                                                        </tr>
+                                                        <% } %>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-footer">
+                    <div class="app-footer-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="d-flex flex-grow-1 flex-stack flex-wrap">
+                                    <a class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center" href="/">
+                                        <i class="fa-solid fa-house fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Trang Chủ
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/upgrade"
+                                    >
+                                        <i class="fa-solid fa-arrow-up-from-bracket fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nâng cấp
+                                        </h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/card"
+                                    >
+                                        <i class="fa-solid fa-money-bill fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nạp Tiền
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/evaluate"
+                                    >
+                                        <i class="fa-regular fa-star fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">TOP</h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/menu"
+                                    >
+                                        <i class="fa-regular fa-user fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Tài Khoản
+                                        </h1>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        console.log('%cBản quyền thuộc về: https://thegioicode.vn', 'color:green;font-size:14px;font-weight:bold');
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.watch-info');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', async function () {
+                    const account_id = this.getAttribute('data-account-id');
+
+                    const data = { account_id };
+
+                    try {
+                        const response = await fetch('/api/auth/player_get_info', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        });
+                        const result = await response.json();
+                        if (result.status === 400) {
+                            Swal.fire({
+                                title: 'Thông báo',
+                                text: result.message,
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#7066e0',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Nâng cấp ngay',
+                                cancelButtonText: 'Huỷ',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = '/upgrade';
+                                }
+                            });
+                        } else if (result.status === 200) {
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Thông báo',
+                                text: result.error,
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Thông báo',
+                            text: 'Lỗi kết nối đến máy chủ',
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</html>

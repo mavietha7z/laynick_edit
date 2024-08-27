@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <!-- Bản quyền thuộc về: https://thegioicode.vn -->
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>LAYNICK.COM - Lấy lại nick FF bằng UID tự động 100%</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="keywords" content="LAYNICK.COM - Lấy lại nick FF bằng UID tự động 100%" />
+        <meta name="description" content="LAYNICK.COM - Lấy lại nick FF bằng UID tự động 100%" />
+        <link href="/css/fullcalendar.bundle.css" rel="stylesheet" />
+        <link href="/css/datatables.bundle.css" rel="stylesheet" />
+        <link href="/css/plugins.bundle.css" rel="stylesheet" />
+        <link href="/css/style.bundle.css" rel="stylesheet" />
+        <link href="/css/style.custom.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <script rel="stylesheet" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body data-kt-app-header-stacked="true" data-kt-app-header-primary-enabled="true" class="app-default">
+        <!-- Bản quyền thuộc về: https://thegioicode.vn -->
+        <div class="d-flex flex-column flex-root app-root">
+            <div class="app-page flex-column flex-column-fluid">
+                <div class="app-header">
+                    <div class="app-header-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-grow-1 flex-lg-grow-0">
+                                <div class="d-flex align-items-center me-7">
+                                    <a href="/" class="d-flex align-items-center me-lg-20 me-5">
+                                        <img alt="Logo" src="/images/logo.png" class="h-40px h-lg-50px" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <% if (isLogin) { %>
+                            <div class="app-navbar flex-shrink-0">
+                                <div class="d-flex align-items-center">
+                                    <a class="cursor-pointer symbol symbol-circle symbol-35px symbol-md-40px" href="/menu">
+                                        <img class="" src="/images/logo-user.gif" alt="user" />
+                                    </a>
+                                </div>
+                            </div>
+                            <% } else { %>
+                            <div class="app-navbar flex-shrink-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-shrink-0">
+                                        <a
+                                            class="btn btn-flex btn-light-danger btn-active-color-white h-30px h-lg-40px border-0 fw-bolder px-4 px-lg-6 ms-3 ms-lg-3"
+                                            href="/login"
+                                            >Đăng nhập</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-wrapper flex-column flex-row-fluid">
+                    <div class="app-container container-xxl d-flex flex-row flex-column-fluid">
+                        <div class="app-main flex-column flex-row-fluid">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="app-content flex-column-fluid pb-0">
+                                    <div class="row gx-5 gx-xl-5 mb-5">
+                                        <div class="col-xxl-12">
+                                            <div class="card">
+                                                <div class="card-body p-0 m-0">
+                                                    <div class="swiper banner rounded">
+                                                        <!-- <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <img
+                                                                    class="w-100 h-250px h-sm-250px h-md-350px h-lg-400px"
+                                                                    src="<%= setting.banner_url %>"
+                                                                    alt="Banner"
+                                                                />
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="swiper-pagination"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="app-content flex-column-fluid">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column">
+                                                <div class="mb-13 text-center">
+                                                    <h1 class="fs-2hx fw-bold mb-5">Lấy Lại Nick Bằng ID Game</h1>
+                                                    <div class="text-gray-400 fw-bold fs-5">Free Fire</div>
+                                                </div>
+                                                <div class="row g-10">
+                                                    <div class="col-12">
+                                                        <div class="d-flex align-items-center justify-content-center">
+                                                            <div class="col-12 col-md-4">
+                                                                <div class="form-group mb-4">
+                                                                    <label for="id">ID GAME</label>
+                                                                    <input
+                                                                        class="form-control"
+                                                                        type="text"
+                                                                        name="account_id"
+                                                                        placeholder="Nhập ID người chơi"
+                                                                    />
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button type="button" class="btn btn-success btn-sm" id="btn-check">
+                                                                        Kiểm tra nick
+                                                                    </button>
+                                                                    <button
+                                                                        class="btn btn-success btn-sm"
+                                                                        type="button"
+                                                                        disabled
+                                                                        id="btn-check-loading"
+                                                                        style="display: none"
+                                                                    >
+                                                                        <span
+                                                                            class="spinner-border spinner-border-sm"
+                                                                            role="status"
+                                                                            aria-hidden="true"
+                                                                        ></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div id="history-check" style="display: none">
+                                                                    <div class="form-group mb-4">
+                                                                        <label for="nickname">TÊN NGƯỜI CHƠI</label>
+                                                                        <input
+                                                                            class="form-control"
+                                                                            type="text"
+                                                                            name="nickname"
+                                                                            placeholder="Nickname người chơi"
+                                                                            disabled
+                                                                        />
+                                                                    </div>
+
+                                                                    <div class="text-center">
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn btn-success btn-sm"
+                                                                            id="btn-getinfo"
+                                                                        >
+                                                                            Lấy thông tin ngay
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="border border-2 border-primary rounded p-4 text-center row">
+                                                            <div class="col-12 mb-3">Bạn Cần Mua Gói Hack Trước</div>
+                                                            <div class="col-12">
+                                                                <a href="/upgrade" class="btn btn-sm btn-danger text-white">Mua Ngay</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="app-content flex-column-fluid">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column">
+                                                <div class="mb-13 text-center">
+                                                    <h1 class="fs-2hx fw-bold mb-5">Lịch Sử Lấy Lại Nick</h1>
+                                                    <div class="text-gray-400 fw-bold fs-5">Free Fire</div>
+                                                </div>
+
+                                                <span class="fs-3 fw-bold text-danger">Lịch Sử Lấy Lại Nick</span>
+                                                <div class="row mt-3">
+                                                    <div class="col-md-12">
+                                                        <table
+                                                            class="table align-middle border rounded text-center table-row-dashed fs-6 g-5 mb-0"
+                                                            id="table-history"
+                                                        >
+                                                            <thead>
+                                                                <tr class="text-center text-gray-400 fw-bold fs-7 text-uppercase">
+                                                                    <th class="min-w-100px text-center">Thời Gian</th>
+                                                                    <th class="min-w-100px text-center">Tên Người Dùng</th>
+                                                                    <th class="min-w-100px text-center">Trạng Thái</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="fw-semibold text-gray-600"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="app-content flex-column-fluid">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column">
+                                                <div class="mb-13">
+                                                    <div class="mb-13 text-center">
+                                                        <h1 class="fs-2hx fw-bold mb-5">Bình Luận</h1>
+                                                        <div class="text-gray-400 fw-bold fs-5">Free Fire</div>
+                                                    </div>
+
+                                                    <div class="chat comments box-border">
+                                                        <div class="chat-history">
+                                                            <ul class="list-unstyled chat-scroll"></ul>
+
+                                                            <div class="chat-message clearfix">
+                                                                <textarea
+                                                                    name="message-to-send"
+                                                                    placeholder="Nhập bình luận..."
+                                                                    rows="2"
+                                                                ></textarea>
+                                                                <button
+                                                                    type="button"
+                                                                    style="cursor: pointer"
+                                                                    class="btn-send-message pill-button"
+                                                                >
+                                                                    Gửi bình luận
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-footer">
+                    <div class="app-footer-primary" style="background-color: white !important">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="d-flex flex-grow-1 flex-stack flex-wrap">
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center active"
+                                        href="/"
+                                    >
+                                        <i class="fa-solid fa-house fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Trang Chủ
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/upgrade"
+                                    >
+                                        <i class="fa-solid fa-arrow-up-from-bracket fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nâng cấp
+                                        </h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/card"
+                                    >
+                                        <i class="fa-solid fa-money-bill fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nạp Tiền
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/evaluate"
+                                    >
+                                        <i class="fa-regular fa-star fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">TOP</h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/menu"
+                                    >
+                                        <i class="fa-regular fa-user fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Tài Khoản
+                                        </h1>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="text" value="<%= setting.notify.html %>" hidden id="notify-input" />
+        </div>
+        <div class="modal show" id="notify" tabindex="-1" role="dialog" aria-modal="true">
+            <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <h3 class="">Thông Báo</h3>
+                        <br />
+
+                        <div id="notify-html"></div>
+
+                        <div class="text-end">
+                            <button class="btn btn-success" id="close-notify">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        console.log('%cBản quyền thuộc về: https://thegioicode.vn', 'color:green;font-size:14px;font-weight:bold');
+        document.addEventListener('DOMContentLoaded', function () {
+            const notifyElement = document.getElementById('notify');
+            const body = document.querySelector('body');
+            const notifyHtmlElement = document.getElementById('notify-html');
+            const notifyInputValue = document.getElementById('notify-input').value;
+            body.style.overflow = 'hidden';
+            notifyElement.style.display = 'block';
+            notifyElement.style.background = 'rgba(0, 0, 0, 0.5)';
+            notifyHtmlElement.innerHTML = notifyInputValue;
+            function closeModal(e) {
+                e.preventDefault();
+                notifyElement.style.display = 'none';
+                body.style.overflow = 'auto';
+            }
+            document.getElementById('close-notify').addEventListener('click', closeModal);
+            notifyElement.addEventListener('click', closeModal);
+        });
+        async function fetchAndUpdateHistory() {
+            try {
+                const response = await fetch('/api/users/histories', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                const result = await response.json();
+
+                if (result.status === 200) {
+                    updateHistoryTable(result.data);
+                } else {
+                    return;
+                }
+            } catch (error) {
+                return;
+            }
+        }
+        function updateHistoryTable(data) {
+            const tableBody = document.getElementById('table-history').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+            data.forEach((item) => {
+                const row = tableBody.insertRow();
+                const created_at = row.insertCell(0);
+                const nickname = row.insertCell(1);
+                const status = row.insertCell(2);
+
+                created_at.textContent = item.created_at;
+                nickname.textContent = item.nickname;
+                status.innerHTML = `<div class="badge badge-success">Thành Công</div>`;
+            });
+        }
+        fetchAndUpdateHistory();
+        setInterval(fetchAndUpdateHistory, 5000);
+        document.getElementById('btn-check').addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            const account_id = document.querySelector('input[name="account_id"]').value;
+            if (!account_id || account_id.length < 7 || account_id.length > 11) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Thông báo',
+                    text: 'ID người chơi không hợp lệ',
+                });
+                return;
+            }
+
+            try {
+                const data = {
+                    account_id,
+                };
+                document.getElementById('btn-check').style.display = 'none';
+                document.querySelector('input[name="account_id"]').disabled = true;
+                document.getElementById('btn-check-loading').style.display = 'inline-block';
+                const response = await fetch('/api/auth/player_id_login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
+                if (result.status === 401) {
+                    document.getElementById('btn-check').style.display = 'inline-block';
+                    document.querySelector('input[name="account_id"]').disabled = false;
+                    document.getElementById('btn-check-loading').style.display = 'none';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông báo',
+                        text: result.error,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/login';
+                        }
+                    });
+                } else if (result.status === 200) {
+                    document.getElementById('history-check').style.display = 'block';
+                    document.getElementById('btn-check-loading').style.display = 'none';
+                    document.querySelector('input[name="nickname"]').value = result.data.nickname;
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thông báo',
+                        text: result.message,
+                    });
+                } else {
+                    document.getElementById('btn-check').style.display = 'inline-block';
+                    document.querySelector('input[name="account_id"]').disabled = false;
+                    document.getElementById('btn-check-loading').style.display = 'none';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông báo',
+                        text: result.error,
+                    });
+                }
+            } catch (error) {
+                document.getElementById('btn-check').style.display = 'inline-block';
+                document.querySelector('input[name="account_id"]').disabled = false;
+                document.getElementById('btn-check-loading').style.display = 'none';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Thông báo',
+                    text: 'Lỗi kết nối đến máy chủ',
+                });
+            }
+        });
+        document.getElementById('btn-getinfo').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const account_id = document.querySelector('input[name="account_id"]').value;
+            const data = {
+                account_id,
+            };
+            try {
+                const response = await fetch('/api/auth/player_get_info', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
+                if (result.status === 400) {
+                    Swal.fire({
+                        title: 'Thông báo',
+                        text: result.message,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#7066e0',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Nâng cấp ngay',
+                        cancelButtonText: 'Huỷ',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/upgrade';
+                        }
+                    });
+                } else if (result.status === 200) {
+                    Swal.fire({
+                        title: 'Thông báo',
+                        text: result.message,
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#47be7d',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Xem thông tin',
+                        cancelButtonText: 'Huỷ',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/history';
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông báo',
+                        text: result.error,
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Thông báo',
+                    text: 'Lỗi kết nối đến máy chủ',
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatList = document.querySelector('.chat-scroll');
+            const textArea = document.querySelector('textarea[name="message-to-send"]');
+            const sendButton = document.querySelector('.btn-send-message');
+            let lastCommentDate = new Date();
+
+            function getCurrentDate() {
+                const newDate = new Date();
+                return newDate.toTimeString().slice(0, 5);
+            }
+            function getCurrentTimeMinusRandomMinutes() {
+                const now = new Date();
+                if (now < lastCommentDate) {
+                    now.setTime(lastCommentDate.getTime() + 60000);
+                }
+                lastCommentDate = new Date(now.getTime());
+                return now.toTimeString().slice(0, 5);
+            }
+            function createComment(comment, byGuest = true, date = null) {
+                const time = getCurrentTimeMinusRandomMinutes();
+                const li = document.createElement('li');
+                li.className = byGuest ? '' : 'clearfix';
+                li.innerHTML = `
+                <div class="message-data ${byGuest ? '' : 'align-right'}">
+                    <span class="message-data-name">${
+                        byGuest ? '<i class="fa fa-circle online"></i> Khách' : 'Bạn <i class="fa fa-circle me"></i>'
+                    }</span>
+                    <span class="message-data-time">${date ? date : time}</span>
+                </div>
+                <div class="message ${byGuest ? 'my-message' : 'other-message float-right'}">${comment}</div>
+            `;
+                chatList.appendChild(li);
+                chatList.scrollTop = chatList.scrollHeight;
+            }
+            const defaultComments = [
+                'ui nick 2 năm cũng đã quay trở về, nick còn xịn hơn trước nữa',
+                'Quá rẻ luôn hihi',
+                'T thấy bác gấu dùng',
+                'Acc t mất 2 năm rồi ad vẫn lấy lại được nha, cảm ơn ad',
+                'Đầu tư 200k lụm đc gần chục acc r, h t đem đi bán kkk',
+                'Bá quá ông ơi',
+                'Tui cx v nè',
+                'ui vãi tưởng bịp ai ngờ đc thật',
+                'thì uy tín mà fen',
+                'uy tín nha b',
+                'Được thật hả mn',
+                'Được nha b',
+                'thành công r, nick về sau 1s',
+                'đỉnh quá ad ơi',
+                'thề luôn web uy tín nhất từ trc tới giò',
+                'đr á',
+                'Đc thật hả mn',
+                'uy tín nha b, mình lấy lại đc r',
+            ];
+            defaultComments.forEach((comment) => createComment(comment));
+            const comments = [
+                'uy tín ko mn',
+                'uy tín nha',
+                'T cx lấy lại đc r nè',
+                'Lấy lại được nick rồi',
+                'lấy lại nick nhanh quá',
+                'ai lấy lại được k?',
+                'đc nè, tui mới lấy lại hồi nãy, nick vô đc luôn',
+                'ok để tui thử',
+                'web bá vãi',
+                'chỉ có laynick.com là uy tín thôi',
+                'cảm ơn shop nha, em lấy lại được acc bị hack r',
+                'web uy tín nha',
+                'LAYNICK.COM thì uy tí r nha',
+                'uy tín ạ',
+                'Ui được thật nè mn',
+                'đã lấy lại đc nick r nè',
+                'hay quá mih lấy lại dc ruii',
+                'laynick.com uy tín nha, t thấy bác gấu đang đứng top lấy nick',
+                'Ad hỗ trợ đc mình lấy lại được 3 nick r',
+                'nick vừa bị mất 5 tháng trước h cũng lấy lại đc r, cảm ơn nhaa',
+                'uy tín nhé mn',
+                'Mik hay dùng bên này nha',
+                'nick 5 năm từ thời tống cũng lấy lại đc nè hihi',
+                'admin hỗ trợ nhiệt tình ạ',
+                'web lấy lại nick nhanh ạ',
+                'Ui đm t hack đc nick thg kia luôn kkk ngon vl',
+                'Web này bá vãi tranh thủ hack thoi',
+                'Ngon nha mn',
+                'Ui hack đc nick thg bn t luôn vl',
+                'đầu từ 100 thật là k uổng phí',
+                'Thật sự mik cảm ơn web rất nhiều luôn, mik lấy lại dc nick cho ny mik luôn r',
+                'cảm ơn web nha',
+                'admin hỗ trợ nhiệt tình nha',
+                'Đầu tư 200k lụm đc gần chục acc r, h t đem đi bán kkk',
+                'Bá quá ông ơi',
+                'Tui cx v nè',
+                'ui vãi tưởng bịp ai ngờ đc thật',
+                'thì uy tín mà fen',
+                'uy tín nha b',
+                'Được thật hả mn',
+                'Được nha b',
+                'thành công r, nick về sau 1s',
+                'đỉnh quá ad ơi',
+                'thề luôn web uy tín nhất từ trc tới giò',
+                'đr á',
+                'Đc thật hả mn',
+                'được nha bn',
+                'uy tín nha anh em',
+                'ui rẻ vcl 100k lấy lại đc nick r',
+                'cảm ơn ad nhiều nha',
+                'em lấy lại được nick cho ngiu r',
+            ];
+            let index = 0;
+            setInterval(() => {
+                createComment(comments[index]);
+                index = (index + 1) % comments.length;
+            }, 5000);
+            sendButton.addEventListener('click', function () {
+                const userComment = textArea.value.trim();
+
+                if (userComment) {
+                    createComment(userComment, false, getCurrentDate());
+                    textArea.value = '';
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông báo',
+                        text: 'Vui lòng nhập bình luận!',
+                    });
+                }
+            });
+            textArea.addEventListener('keypress', function (event) {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    sendButton.click();
+                }
+            });
+        });
+    </script>
+</html>

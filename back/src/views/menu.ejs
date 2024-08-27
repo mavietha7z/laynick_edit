@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <%- include('header') %>
+
+    <body data-kt-app-header-stacked="true" data-kt-app-header-primary-enabled="true" class="app-default">
+        <!-- Bản quyền thuộc về: https://thegioicode.vn -->
+        <div class="d-flex flex-column flex-root app-root">
+            <div class="app-page flex-column flex-column-fluid">
+                <div class="app-header">
+                    <div class="app-header-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-grow-1 flex-lg-grow-0">
+                                <div class="d-flex align-items-center me-7">
+                                    <a href="/" class="d-flex align-items-center me-lg-20 me-5">
+                                        <a href="/"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="app-navbar flex-shrink-0">
+                                <a class="app-navbar-item ms-3 ms-lg-9" href="accounts">
+                                    <div class="d-flex align-items-center">
+                                        <a class="cursor-pointer symbol symbol symbol-circle symbol-35px symbol-md-40px" href="/menu">
+                                            <img class="" src="/images/logo-user.gif" alt="user" />
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-wrapper flex-column flex-row-fluid">
+                    <div class="app-container container-xxl d-flex flex-row flex-column-fluid">
+                        <div class="app-main flex-column flex-row-fluid">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="app-content flex-column-fluid">
+                                    <div class="card mb-3">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <div class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa fa-credit-card fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">Số dư: <%= data.wallet %>đ</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="menu-item my-1">
+                                                                    <div class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa fa-user fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title"
+                                                                            >Loại tài khoản: <%= data.membership %></span
+                                                                        >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mb-3">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <a href="/card" class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa fa-credit-card fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">Nạp tiền qua thẻ cào</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <a href="/upgrade" class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa fa-star fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">VIP</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <a href="/history" class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa-solid fa-clock-rotate-left fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">Lịch sử hack nick</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <a href="/accounts" class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa fa-user fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">Tài khoản</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <a href="" class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fab fa-facebook"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">Liên hệ qua facebook</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="collapse show">
+                                            <div class="card-body p-2">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-wrap">
+                                                            <div class="menu menu-column menu-gray-600 fw-semibold w-100">
+                                                                <div class="menu-item my-1">
+                                                                    <a href="/api/auth/logout" class="menu-link">
+                                                                        <span class="menu-icon">
+                                                                            <i class="fa fa-user fs-3"></i>
+                                                                        </span>
+                                                                        <span class="menu-title">Đăng xuất</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-footer">
+                    <div class="app-footer-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="d-flex flex-grow-1 flex-stack flex-wrap">
+                                    <a class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center" href="/">
+                                        <i class="fa-solid fa-house fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Trang Chủ
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/upgrade"
+                                    >
+                                        <i class="fa-solid fa-arrow-up-from-bracket fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nâng cấp
+                                        </h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/card"
+                                    >
+                                        <i class="fa-solid fa-money-bill fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nạp Tiền
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/evaluate"
+                                    >
+                                        <i class="fa-regular fa-star fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">TOP</h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center active"
+                                        href="/menu"
+                                    >
+                                        <i class="fa-regular fa-user fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Tài Khoản
+                                        </h1>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        console.log('%cBản quyền thuộc về: https://thegioicode.vn', 'color:green;font-size:14px;font-weight:bold');
+    </script>
+</html>

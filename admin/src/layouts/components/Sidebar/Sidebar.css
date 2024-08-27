@@ -1,0 +1,152 @@
+.sidebar {
+    z-index: 998;
+    height: 100vh;
+    overflow-y: hidden;
+    background-color: #343a40;
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin-left: 0;
+    overflow-x: hidden;
+    width: 50px;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar-logo {
+    padding: 12px 14px;
+    display: block;
+    border-bottom: 1px solid #4b545c;
+}
+
+.logo {
+    background-image: url('../../../assets/image/thenhanh.png');
+    width: 154px;
+    height: 42px;
+    margin: 0 auto;
+}
+
+.sidebar-content {
+    overflow-y: auto;
+    height: calc(100% - 68px);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    overflow-x: hidden;
+}
+
+.sidebar-over {
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.sidebar-content .sidebar-list {
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: flex-end;
+    color: #c2c7d0;
+    padding: 8px 6px 8px 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.sidebar-link.active {
+    background-color: #494e53;
+}
+
+.sidebar-link.active span svg {
+    transform: rotate(-90deg);
+}
+
+.sidebar-link:hover {
+    background-color: #494e53;
+    border-radius: 4px;
+    color: #c2c7d0;
+}
+
+.sidebar-icon {
+    font-size: 1.8rem;
+    margin-right: 8px;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.sidebar-link span {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    width: 100%;
+    font-size: 1.4rem;
+    transition: all 0.4s;
+}
+
+.sidebar-link span.active {
+    margin-left: 6px;
+}
+
+.sidebar-link span svg {
+    font-size: 1.1rem;
+    transition: all 0.4s;
+}
+
+#collapsePin ul {
+    margin-top: 0;
+    display: block;
+}
+
+#collapsePin ul li {
+    list-style: none;
+    margin-top: 4px;
+}
+
+.link-sub {
+    padding: 9px 12px 9px 14px;
+    color: #c2c7d0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.link-sub:hover {
+    background-color: #494e53;
+    border-radius: 4px;
+    color: #c2c7d0;
+}
+
+.link-sub svg {
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+.link-sub span {
+    margin-left: 0;
+    transition: all 0.4s;
+}
+
+.link-sub span.active {
+    margin-left: 6px;
+}
+
+@media (min-width: 0) and (max-width: 739px) {
+    .sidebar {
+        width: 0;
+    }
+}

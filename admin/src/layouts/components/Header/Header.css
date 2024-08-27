@@ -1,0 +1,195 @@
+.wrapper-header {
+    height: 70px;
+}
+
+.header.active {
+    margin-left: 250px;
+}
+
+.header-nav {
+    height: 78%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon svg {
+    padding: 0 14px 0 20px;
+    font-size: 1.6rem;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.header-icon svg:hover {
+    color: var(--back);
+}
+
+.header-title a {
+    margin-right: 20px;
+    padding: 14px 0;
+    cursor: pointer;
+    color: var(--gray);
+    transition: all 0.2s;
+}
+
+.header-title a:hover {
+    color: var(--back);
+}
+
+.header-input {
+    background-color: #f2f4f6;
+    border-radius: 4px;
+    padding: 2px 0;
+    padding-right: 4px;
+    width: auto !important;
+}
+
+.header-input svg {
+    font-size: 1.4rem;
+    display: inline-block;
+    margin-bottom: -2px;
+}
+
+.header-input input {
+    background-color: #f2f4f6;
+    border: none;
+    font-size: 1.4rem;
+}
+
+.header-input input:focus {
+    background-color: #dee2e6;
+}
+
+.header-input button {
+    padding: 0 8px;
+}
+
+.header-logout {
+    margin-right: 30px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.notification {
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.notification svg,
+.header-logout svg {
+    font-size: 1.8rem;
+}
+
+.tippy {
+    background-color: #fff;
+    padding: 8px 0 0;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    margin: 0;
+    overflow: hidden;
+    will-change: opacity, transform;
+}
+
+.tippy header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 18px;
+}
+
+.tippy h6 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.tippy-content {
+    max-height: 68vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.tippy-item {
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    margin: 0 8px;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+    margin-bottom: 8px;
+}
+
+.tippy-item:hover {
+    cursor: pointer;
+    background: #f4f6f9;
+}
+
+.tippy-item.tippy-watch {
+    background: #f4f6f9;
+}
+
+.tippy-avatar {
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 48px;
+    position: relative;
+    width: 48px;
+}
+
+.tippy-avatar img {
+    border-radius: 50%;
+    height: 9em;
+    object-fit: cover;
+    width: 9em;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 5.7px;
+}
+
+.tippy-message {
+    color: #333;
+    flex: 1 1;
+    font-size: 1.4rem;
+    line-height: 18px;
+    padding: 0 8px;
+    word-break: break-word;
+    margin-left: 8px;
+}
+
+.tippy-see {
+    align-items: center;
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    height: 40px;
+    justify-content: center;
+    position: sticky;
+}
+
+@media (min-width: 0px) and (max-width: 739px) {
+    .tippy {
+        max-width: 94vw;
+        width: 520px;
+    }
+}

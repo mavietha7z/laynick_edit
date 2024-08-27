@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <%- include('header') %>
+    <body data-kt-app-header-stacked="true" data-kt-app-header-primary-enabled="true" class="app-default">
+        <!-- Bản quyền thuộc về: https://thegioicode.vn -->
+        <div class="d-flex flex-column flex-root app-root">
+            <div class="app-page flex-column flex-column-fluid">
+                <div class="app-header">
+                    <div class="app-header-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-grow-1 flex-lg-grow-0">
+                                <div class="d-flex align-items-center me-7">
+                                    <a href="/" class="d-flex align-items-center me-lg-20 me-5">
+                                        <a href="/"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="app-navbar flex-shrink-0">
+                                <a class="app-navbar-item ms-3 ms-lg-9" href="accounts">
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center flex-shrink-0">
+                                            <a
+                                                class="btn btn-flex btn-light-danger btn-active-color-white h-30px h-lg-40px border-0 fw-bolder px-4 px-lg-6 ms-3 ms-lg-3"
+                                                href="/login"
+                                                >Đăng Nhập</a
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-wrapper flex-column flex-row-fluid">
+                    <div class="app-container container-xxl d-flex flex-row flex-column-fluid">
+                        <div class="app-main flex-column flex-row-fluid">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center container-xxl">
+                                    <div class="content flex-row-fluid flex-lg-row-auto justify-content-center">
+                                        <div
+                                            class="card d-flex flex-center rounded-4 w-md-600px p-10 mt-0 mt-lg-5 mb-5 mb-lg-0 w-md-400px form-login"
+                                        >
+                                            <form class="form w-100">
+                                                <div class="text-center mb-11">
+                                                    <h1 class="text-dark fw-bolder mb-3">Đăng Ký</h1>
+                                                    <div class="text-gray-500 fw-semibold fs-6">Đăng Ký Tài Khoản</div>
+                                                </div>
+                                                <div class="fv-row mb-8">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Tên của bạn"
+                                                        name="full_name"
+                                                        class="form-control bg-transparent"
+                                                    />
+                                                </div>
+                                                <div class="fv-row mb-8">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Tài Khoản"
+                                                        name="username"
+                                                        class="form-control bg-transparent"
+                                                    />
+                                                </div>
+                                                <div class="fv-row mb-8">
+                                                    <input
+                                                        type="password"
+                                                        placeholder="Mật Khẩu"
+                                                        name="password"
+                                                        class="form-control bg-transparent"
+                                                    />
+                                                </div>
+                                                <div class="d-grid mb-10 mt-5">
+                                                    <button type="submit" class="btn btn-primary" id="register">
+                                                        <span class="indicator-label">Đăng Ký</span>
+                                                    </button>
+                                                </div>
+                                                <div class="text-gray-500 text-center fw-semibold fs-6">
+                                                    Đã có tài khoản? <a href="/login" class="link-primary">Đăng nhập ngay</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-footer">
+                    <div class="app-footer-primary">
+                        <div class="app-container container-xxl d-flex align-items-stretch justify-content-between">
+                            <div class="d-flex flex-column flex-column-fluid">
+                                <div class="d-flex flex-grow-1 flex-stack flex-wrap">
+                                    <a class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center" href="/">
+                                        <i class="fa-solid fa-house fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Trang Chủ
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/upgrade"
+                                    >
+                                        <i class="fa-solid fa-arrow-up-from-bracket fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nâng cấp
+                                        </h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/card"
+                                    >
+                                        <i class="fa-solid fa-money-bill fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Nạp Tiền
+                                        </h1>
+                                    </a>
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/evaluate"
+                                    >
+                                        <i class="fa-regular fa-star fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">TOP</h1>
+                                    </a>
+
+                                    <a
+                                        class="footer-nav-title d-flex flex-column justify-content-center flex-wrap text-center"
+                                        href="/menu"
+                                    >
+                                        <i class="fa-regular fa-user fs-2 mb-1"></i>
+                                        <h1 class="page-heading d-flex font-nav-footer flex-column justify-content-center my-0">
+                                            Tài Khoản
+                                        </h1>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        console.log('%cBản quyền thuộc về: https://thegioicode.vn', 'color:green;font-size:14px;font-weight:bold');
+        document.getElementById('register').addEventListener('click', async (event) => {
+            event.preventDefault();
+            const full_name = document.querySelector('input[name="full_name"]').value;
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const data = {
+                full_name,
+                username,
+                password,
+            };
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (result.status === 200) {
+                    window.location.href = '/';
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông báo',
+                        text: result.error,
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Thông báo',
+                    text: 'Lỗi kết nối đến máy chủ',
+                });
+            }
+        });
+    </script>
+</html>
